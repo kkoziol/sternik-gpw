@@ -9,12 +9,10 @@ public final class GpwServerKontrolaAbonamentu extends Observable implements Obs
     private final ServerDanychGieldowych gpwServer;
     private final Set<String> tikiOplacone = new HashSet<String>();
 
-    public GpwServerKontrolaAbonamentu(ServerDanychGieldowych server) {
+    public GpwServerKontrolaAbonamentu(ServerDanychGieldowych server, String shareName) {
         this.gpwServer = server;
         server.addObserver(this);
-        tikiOplacone.add("KGH");
-//        tikiOplacone.add("WWL");
-//        tikiOplacone.add("PKO");
+        tikiOplacone.add(shareName);
     }
 
     @Override
